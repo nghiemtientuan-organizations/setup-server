@@ -1,22 +1,21 @@
 #!/bin/bash
+echo [Noti] Start configuration ...
 
-echo ''
-echo '#---------------------------------------------------#'
-echo '#  Check ubuntu support version  #'
-echo '#---------------------------------------------------#'
-echo [Notify] Ubuntu version: $(lsb_release -rs)
-if [[ $(lsb_release -rs) == "18."* ]]; then
-    echo [Notify] Compatible ubuntu version
-else
-    echo [Error] Non-compatible ubuntu version
-    exit 1
-fi
-
-#----- FUNCTION Install window dependency -----#
-source ./core/updateWindow.sh
-source ./core/base.sh
-echo [Notify] Install window dependency success
-
+#echo [Noti] Check ubuntu version ...
+#echo [Noti] Ubuntu version: $(lsb_release -rs)
+#if [[ $(lsb_release -rs) == "20."* ]]; then
+#    echo [Noti] Compatible ubuntu version
+#else
+#    echo [Error] Non-compatible ubuntu version
+#    exit 1
+#fi
+#
+## Install window dependency
+#echo [Noti] Install window dependency ...
+#sudo apt update -y & apt upgrade -y
+#sudo apt install git curl wget nano vim unzip gcc g++ make htop nload zip cron -y
+#echo [Noti] Install window dependency success
+#
 #read -p '[Question] Install docker & docker-compose (y/n)?' docker_answer
 #case ${docker_answer:0:1} in
 #    y|Y|yes|YES|Yes )
