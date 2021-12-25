@@ -10,6 +10,11 @@ if [ $EUID != 0 ]; then
     exit 1
 fi
 
+#----- FUNCTION check package installed -----#
+function packageIsInstalled() {
+    dpkg-query -W -f='${Status}' "$1" 2>/dev/null | grep -c "ok installed"
+}
+
 #----- FUNCTION install with ubuntu version -----#
 function runInUbuntuVersion() {
     ubuntuVersion=$(lsb_release -rs)
@@ -27,6 +32,9 @@ function runInUbuntuVersion() {
 echo '#---------------------------------------------------#'
 echo '#  Ubuntu  #'
 echo '#---------------------------------------------------#'
+if ! package_is_installed "lsb-release"; then
+    sudo apt install lsb-release -y
+fi
 if [[ $(lsb_release -d) == *"Ubuntu"* ]]; then
     echo [Notify] Compatible ubuntu
 
