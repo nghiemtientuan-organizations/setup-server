@@ -22,7 +22,7 @@ wait
 read -p '[Question] Install docker & docker-compose (y/n)?' docker_answer
 case ${docker_answer:0:1} in
     y|Y|yes|YES|Yes )
-        sourse ./core/docker.sh
+        source ./core/docker.sh
         wait
     ;;
 esac
