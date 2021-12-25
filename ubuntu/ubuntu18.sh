@@ -18,6 +18,21 @@ wait
 source ./core/base.sh
 wait
 
+#----- FUNCTION Install SSH Server -----#
+read -p '[Question] SSH Server (y/n)?' sshServer_answer
+case ${sshServer_answer:0:1} in
+    y|Y|yes|YES|Yes )
+        source ./core/sshServer.sh
+        wait
+        source ./core/generateSSHKey.sh
+        wait
+    ;;
+esac
+
+#----- FUNCTION Generate SSH Key -----#
+source ./core/generateSSHKey.sh
+wait
+
 #----- FUNCTION Install docker and docker-compose -----#
 read -p '[Question] Install docker & docker-compose (y/n)?' docker_answer
 case ${docker_answer:0:1} in
