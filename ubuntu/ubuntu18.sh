@@ -13,16 +13,16 @@ else
 fi
 
 #----- FUNCTION Install window dependency -----#
-source ./core/updateWindow.sh &
+source ./core/updateWindow.sh
 wait
-source ./core/base.sh &
+source ./core/base.sh
 wait
 
 #----- FUNCTION Install docker and docker-compose -----#
 read -p '[Question] Install docker & docker-compose (y/n)?' docker_answer
 case ${docker_answer:0:1} in
     y|Y|yes|YES|Yes )
-        sourse ./core/docker.sh &
+        sourse ./core/docker.sh
         wait
     ;;
 esac
