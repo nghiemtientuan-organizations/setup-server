@@ -104,3 +104,5 @@ case ${deployer_answer:0:1} in
         wait
     ;;
 esac
+
+sudo apt autoremove
