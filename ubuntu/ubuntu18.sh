@@ -50,3 +50,12 @@ case ${php_answer:0:1} in
         wait
     ;;
 esac
+
+#----- FUNCTION Install composer -----#
+read -p '[Question] Install composer (y/n)?' composer_answer
+case ${composer_answer:0:1} in
+    y|Y|yes|YES|Yes )
+        source ./core/compose.sh
+        wait
+    ;;
+esac

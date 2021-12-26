@@ -7,7 +7,7 @@ echo '#  Install PHP  #'
 echo '#---------------------------------------------------#'
 while true;
 do
-    read -p '[Question] PHP Version (8.0|7.4|7.3)?' php_version_input
+    read -p '[Question] PHP Version (8.0|7.4|7.3|7.2)?' php_version_input
     case ${php_version_input} in
         8|8.|8.0 )
             php_version='8.0'
@@ -21,8 +21,12 @@ do
             php_version='7.3'
             break
         ;;
+        7.2 )
+            php_version='7.2'
+            break
+        ;;
         * )
-          echo '[Notify] Please enter php version (support install 8.0|7.4|7.3 version)'
+          echo '[Notify] Please enter php version (support install 8.0|7.4|7.3|7.2 version)'
         ;;
     esac
 done
