@@ -68,3 +68,12 @@ case ${mysql_answer:0:1} in
         wait
     ;;
 esac
+
+#----- FUNCTION Install nodejs -----#
+read -p '[Question] Install nodejs (y/n)?' nodejs_answer
+case ${nodejs_answer:0:1} in
+    y|Y|yes|YES|Yes )
+        source ./core/nodejs.sh
+        wait
+    ;;
+esac

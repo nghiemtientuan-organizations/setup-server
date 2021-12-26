@@ -20,8 +20,10 @@ function runInUbuntuVersion() {
     ubuntuVersion=$(lsb_release -rs)
     if [[ $ubuntuVersion == "18."* ]]; then
       source ./ubuntu18.sh
+      wait
     elif [[ $ubuntuVersion == "20."* ]]; then
       source ./ubuntu20.sh
+      wait
     else
       echo [Error] Non-compatible ubuntu support version
       exit 1
@@ -39,6 +41,10 @@ if [[ $(lsb_release -d) == *"Ubuntu"* ]]; then
     echo [Notify] Compatible ubuntu
 
     runInUbuntuVersion
+
+    echo '#---------------------------------------------------#'
+    echo '#  Finish install  #'
+    echo '#---------------------------------------------------#'
 else
     echo [Error] Non-compatible ubuntu
     exit 1
