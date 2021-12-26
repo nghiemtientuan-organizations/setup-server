@@ -41,3 +41,12 @@ case ${docker_answer:0:1} in
         wait
     ;;
 esac
+
+#----- FUNCTION Install php -----#
+read -p '[Question] Install php (y/n)?' php_answer
+case ${php_answer:0:1} in
+    y|Y|yes|YES|Yes )
+        source ./core/php.sh
+        wait
+    ;;
+esac
