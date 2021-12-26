@@ -77,3 +77,30 @@ case ${nodejs_answer:0:1} in
         wait
     ;;
 esac
+
+#----- FUNCTION Install Nginx -----#
+read -p '[Question] Install nginx (y/n)?' nginx_answer
+case ${nginx_answer:0:1} in
+    y|Y|yes|YES|Yes )
+        source ./core/nginx.sh
+        wait
+    ;;
+esac
+
+#----- FUNCTION Install Apache2 -----#
+read -p '[Question] Install apache (y/n)?' apache_answer
+case ${apache_answer:0:1} in
+    y|Y|yes|YES|Yes )
+        source ./core/apache.sh
+        wait
+    ;;
+esac
+
+#----- FUNCTION Install deployer -----#
+read -p '[Question] Install deployer (y/n)?' deployer_answer
+case ${deployer_answer:0:1} in
+    y|Y|yes|YES|Yes )
+        source ./core/deployer.sh
+        wait
+    ;;
+esac

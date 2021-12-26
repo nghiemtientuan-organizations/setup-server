@@ -14,4 +14,5 @@ while true; do
         ;;
     esac
 done
+
 echo [Notify][Success] Generate SSH key

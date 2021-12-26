@@ -38,7 +38,7 @@ esac
 read -p "[Question] Remove test database and access to it (y/n)?" remove_test_database
 case ${remove_test_database:0:1} in
     y|Y|yes|YES|Yes )
-        mysql -e "DROP DATABASE test"
+        mysql -e "DROP DATABASE IF EXISTS test"
     ;;
 esac
 
