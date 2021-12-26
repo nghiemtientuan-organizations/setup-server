@@ -59,3 +59,12 @@ case ${composer_answer:0:1} in
         wait
     ;;
 esac
+
+#----- FUNCTION Install mysql -----#
+read -p '[Question] Install mysql (y/n)?' mysql_answer
+case ${mysql_answer:0:1} in
+    y|Y|yes|YES|Yes )
+        source ./core/mysql.sh
+        wait
+    ;;
+esac
